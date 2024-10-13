@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-'''
+"""
 Everythng in this module is about Pascal's Triangle
-'''
+"""
+
 
 def pascal_triangle(n):
-    '''
+    """
     Returns a list of lists as row of the Pascal's Triangle
-    '''
-
+    """
     triangle = []
     row_num = 0
 
@@ -24,4 +24,5 @@ def pascal_triangle(n):
                     else:
                         new_row.append(last_row[index - 1] + last_row[index])
             triangle.append(new_row)
+
     return triangle
