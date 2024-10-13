@@ -1,0 +1,1 @@
+Pascal created on headache for engineers in interviews. Ladies and gentlemen, Pascals Triangle.
