@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''
 Everythng in this module is about Pascal's Triangle
 '''
