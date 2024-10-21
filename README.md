@@ -1,0 +1,1 @@
+The repo is about preparing engineers for interviews.
