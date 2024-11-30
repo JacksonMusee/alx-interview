@@ -6,6 +6,9 @@
 def makeChange(coins, total):
     """Find the minimum number of coins to make total
     """
+    if total <= 0:
+        return 0
+
     memo = {0: 0}
 
     for i in range(1, total + 1):
