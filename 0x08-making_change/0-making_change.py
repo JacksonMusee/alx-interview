@@ -6,6 +6,7 @@
 def makeChange(coins, total):
     """Find the minimum number of coins to make total
     """
+    '''
     if total <= 0:
         return 0
 
@@ -21,5 +22,16 @@ def makeChange(coins, total):
                     memo[i] = min(current_best, memo.get(subproblem) + 1)
                 else:
                     memo[i] = memo.get(subproblem) + 1
+                    
 
     return memo.get(total, -1)
+'''
+
+    dp = [float('inf')] * (total + 1)
+    dp[0] = 0
+
+    for coin in coins:
+        for i in range(coin, total + 1):
+            dp[i] = min(dp[i], dp[i - coin] + 1)
+
+    return dp[total] if dp[total] != float('inf') else -1
