@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 def makeChange(coins, total):
     """Find the minimum number of coins to make total
