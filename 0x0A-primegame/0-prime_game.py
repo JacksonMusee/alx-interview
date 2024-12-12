@@ -6,14 +6,16 @@ Prime game code
 
 def isWinner(x, nums):
     """
-    Determines the winner of the game based on the number of rounds and their corresponding values of n.
+    Determines the winner of the game based on the number of rounds
+    and their corresponding values of n.
 
     Args:
         x (int): Number of rounds.
         nums (list): List of n values for each round.
 
     Returns:
-        str or None: Name of the player with the most wins ('Maria' or 'Ben'), or None if it's a tie.
+        str or None: Name of the player with the most wins ('Maria' or 'Ben'),
+        or None if it's a tie.
     """
     if x <= 0 or not nums:
         return None
