@@ -63,10 +63,12 @@ try:
             except Exception:
                 pass
 
-        if line_count == 10 or EOFError:
+        if line_count == 10:
             print_metrics()
             line_count = 0
 
-except KeyboardInterrupt:
+except (KeyboardInterrupt, EOFError):
     print_metrics()
     sys.exit(0)
+
+print_metrics()
