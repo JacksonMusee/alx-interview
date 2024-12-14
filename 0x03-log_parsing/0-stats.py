@@ -63,9 +63,9 @@ try:
             except Exception:
                 pass
 
-        if line_count == 10 or EOFError:
-            print_metrics()
-            line_count = 0
+    if line_count == 10 or EOFError:
+        print_metrics()
+        line_count = 0
 
 except KeyboardInterrupt:
     print_metrics()
