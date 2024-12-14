@@ -25,12 +25,13 @@ import sys
 import re
 
 log_regex = (
+    # Group 1: Matches either domain or IP address
     r'^([\w\.-]+|\d{1,3}(\.\d{1,3}){3})\s*-\s*'
-    r'\[(.+?)\]\s*'
-    r'"GET \/projects\/260 HTTP\/1\.1"\s*'
-    r'(\S+)\s+(\d+)$'
+    r'\[(.+?)\]\s*'  # Group 2: Matches the timestamp
+    r'"GET \/projects\/260 HTTP\/1\.1"\s*'  # Static part of the log line
+    r'(\S+)\s+'  # Group 3: Matches the status code (string or number)
+    r'(\d+)$'  # Group 4:
 )
-
 
 line_count = 0
 file_size = 0
@@ -54,11 +55,11 @@ try:
         line = line.strip()
         line_count += 1
 
-        match = re.match(log_regex, line)
+        match = re.fullmatch(log_regex, line)
         if match:
-            file_size += int(match.group(4))
+            file_size += int(match.group(5))
             try:
-                status_code = int(match.group(3))
+                status_code = int(match.group(4))
                 if status_code in status_code_counts:
                     status_code_counts[status_code] += 1
             except Exception:
