@@ -53,7 +53,7 @@ try:
         line = line.strip()
         line_count += 1
 
-        match = re.match(log_regex, line)
+        match = re.fullmatch(log_regex, line)
         if match:
             file_size += int(match.group(4))
             try:
