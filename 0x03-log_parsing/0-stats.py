@@ -54,7 +54,7 @@ try:
         line_count += 1
 
         if re.fullmatch(log_regex, line):
-            matches = re.match(log_regex, line)
+            matches = re.fullmatch(log_regex, line)
             file_size += int(matches.group(4))
             try:
                 status_code = int(matches.group(3))
