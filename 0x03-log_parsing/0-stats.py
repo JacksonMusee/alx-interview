@@ -25,10 +25,10 @@ import sys
 import re
 
 log_regex = (
-    r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - '
-    r'\[(.+?)\] '
-    r'"GET \/projects\/260 HTTP\/1\.1" '
-    r'(\d{3}) (\d+)$'
+    r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s*-\s*'
+    r'\[(.+?)\]\s*'
+    r'"GET \/projects\/260 HTTP\/1\.1"\s*'
+    r'(\d{3})\s+(\d+)$'
 )
 
 line_count = 0
