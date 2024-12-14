@@ -25,7 +25,7 @@ import sys
 import re
 
 log_regex = (
-    r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s*-\s*'
+    r'^([\w\.-]+)\s*-\s*'
     r'\[(.+?)\]\s*'
     r'"GET \/projects\/260 HTTP\/1\.1"\s*'
     r'(\d{3})\s+(\d+)$'
