@@ -51,11 +51,11 @@ def print_metrics():
 try:
     for line in sys.stdin:
         line = line.strip()
+        line_count += 1
+
         if re.fullmatch(log_regex, line):
-            line_count += 1
             matches = re.match(log_regex, line)
             file_size += int(matches.group(4))
-
             try:
                 status_code = int(matches.group(3))
                 if status_code in status_code_counts:
@@ -63,9 +63,9 @@ try:
             except Exception:
                 pass
 
-    if line_count == 10 or EOFError:
-        print_metrics()
-        line_count = 0
+        if line_count == 10 or EOFError:
+            print_metrics()
+            line_count = 0
 
 except KeyboardInterrupt:
     print_metrics()
