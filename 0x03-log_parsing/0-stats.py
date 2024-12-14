@@ -63,7 +63,7 @@ try:
             except Exception:
                 pass
 
-        if line_count == 10:
+        if line_count == 10 or EOFError:
             print_metrics()
             line_count = 0
 
