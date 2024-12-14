@@ -53,11 +53,11 @@ try:
         line = line.strip()
         line_count += 1
 
-        if re.fullmatch(log_regex, line):
-            matches = re.fullmatch(log_regex, line)
-            file_size += int(matches.group(4))
+        match = re.fullmatch(log_regex, line)
+        if match:
+            file_size += int(match.group(4))
             try:
-                status_code = int(matches.group(3))
+                status_code = int(match.group(3))
                 if status_code in status_code_counts:
                     status_code_counts[status_code] += 1
             except Exception:
